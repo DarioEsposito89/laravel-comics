@@ -15,13 +15,22 @@
 </head>
 
 <body>
-    @include('partials.header')
+    <body>
+        <header class="bg-light">
+            @include('partials.navbar')
+        </header>
     
-    <main>
-        @yield("main")
-    </main>
-
-    @include('partials.footer')
+        <div class="jumbotron"></div>
     
-    <script src="./script.js"></script>
+        <main>
+            @yield('content')
+            @yield('infoLinks')
+        </main>
+    
+        <footer>
+            @include('partials.footerMain')
+            @include('partials.footerBottom')
+        </footer>
+    
+    </body>
 </body>

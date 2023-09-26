@@ -1,14 +1,19 @@
-@use "bootstrap";
 
-@use "./partials/header";
-@use "./partials/home";
-@use "./partials/footer";
+// FONT
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-ul{
-    list-style: none;
-}
+// VARIABLES + MAIN
+@import "./partials/variables";
+@import "./partials/main";
 
-a{
-    text-decoration: none;
-}
+// HEADER
+@import "./partials/navbar";
+@import "./partials/jumbotron";
+
+// MAIN
+@import "./partials/mainContent";
+@import "./partials/infoLinks";
+
+// FOOTER
+@import "./partials/footerMain";
+@import "./partials/footerBottom";
