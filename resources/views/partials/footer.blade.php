@@ -9,11 +9,11 @@
                 ["name" => "tv"],
                 ["name" => "games"],
                 ["name" => "videos"],
-                ["name" => "news"];
+                ["name" => "news"]
             ],
             "listShop" => [
                 ["name" => "Shop DC"],
-                ["name" => "Shop DC Collectibles"];
+                ["name" => "Shop DC Collectibles"]
             ],
             "listDC" => [
                 ["name" => "terms of use"],
@@ -28,7 +28,7 @@
                 ["name" => "certificates"],
                 ["name" => "ratings"],
                 ["name" => "shop help"],
-                ["name" => "contact us"],
+                ["name" => "contact us"]
             ],
             "listSites" => [
                 ["name" => "DC"],
@@ -37,14 +37,14 @@
                 ["name" => "DC kids"],
                 ["name" => "DC"],
                 ["name" => "universe"],
-                ["name" => "DC power visa"];
+                ["name" => "DC power visa"]
             ],
             "listSocial" => [
-                ["name" => "footer-facebook.png"],
-                ["name" => "footer-twitter.png"],
-                ["name" => "footer-youtube.png"],
-                ["name" => "footer-pinterest.png"],
-                ["name" => "footer-periscope.png"],
+                ["img" => "/img/footer-facebook.png"],
+                ["img" => "footer-twitter.png"],
+                ["img" => "footer-youtube.png"],
+                ["img" => "footer-pinterest.png"],
+                ["img" => "footer-periscope.png"]
             ],
             
         ],
@@ -53,27 +53,27 @@
 @endphp
 
 <footer>
-    <section class="section-middle">
+    <section class="section-middle bg-dark">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="list-container d-flex pt-2 gap-5">
                 <div id="comics-and-shop">
-                    <h4>DC COMICS</h4>
+                    <h4 class="text-white">DC COMICS</h4>
                     @foreach ($links as $section )
                     <ul>
                         @foreach ($section ["listComic"] as $link)
                         <li class="lh-2 text-capitalize">
-                            <a href="#">{{ $link["name"] }}</a>
+                            <a href="#" style="color: #ada8a8; font-size: 1rem; margin: 1rem 0;">{{ $link["name"] }}</a>
                         </li>
                         @endforeach
                     </ul>
                     @endforeach
 
-                    <h4>SHOP</h4>
+                    <h4 class="text-white">SHOP</h4>
                     @foreach ($links as $section )
                     <ul>
                         @foreach ($section ["listShop"] as $link)
                         <li class="lh-2 text-capitalize">
-                            <a href="#">{{ $link["name"] }}</a>
+                            <a href="#" style="color: #ada8a8; font-size: 1rem; margin: 1rem 0;">{{ $link["name"] }}</a>
                         </li>
                         @endforeach
                     </ul>
@@ -81,12 +81,12 @@
                 </div>
             
                 <div id="dc">
-                    <h4>DC</h4>
+                    <h4 class="text-white">DC</h4>
                     @foreach ($links as $section )
                     <ul>
                         @foreach ($section ["listDC"] as $link)
-                        <li class="lh-2 text-capitalize">
-                            <a href="#">{{ $link["name"] }}</a>
+                        <li class="lh-2 text-capitalize" >
+                            <a href="#" style="color: #ada8a8; font-size: 1rem; margin: 1rem 0;">{{ $link["name"] }}</a>
                         </li>
                         @endforeach
                     </ul>
@@ -94,12 +94,12 @@
                 </div>
             
                 <div id="SITES">
-                    <h4>SITES</h4>
+                    <h4 class="text-white">SITES</h4>
                     @foreach ($links as $section )
                     <ul>
                         @foreach ($section ["listSites"] as $link)
                         <li class="lh-2 text-capitalize">
-                            <a href="#">{{ $link["name"] }}</a>
+                            <a href="#" style="color: #ada8a8; font-size: 1rem; margin: 1rem 0;">{{ $link["name"] }}</a>
                         </li>
                         @endforeach
                     </ul>
@@ -108,12 +108,12 @@
             </div>
 
             <div class="big-logo">
-                <img src="/img/dc-logo-bg.png" alt="">
+                <img src="./img/dc-logo-bg.png" alt="">
             </div>
         </div>
     </section>
     
-    <section class="section-bottom d-flex align-items-center">
+    <section class="section-bottom d-flex align-items-center" style="background-color: #303030; height: 100px;">
         <div class="container d-flex justify-content-between align-items-center">
             <div class="sign">
                 <button type="button" class="btn btn-outline-primary rounded-0 text-white">SIGN-UP NOW!</button>
@@ -121,15 +121,19 @@
 
             <div class="follow d-flex align-items-center">
                 <h3 class="text-primary">FOLLOW US</h3>
+                @foreach ($links as $section )
                 <ul class="list-social d-flex gap-3">
-                    <li v-for="social in listSocial">
+                    @foreach ($section ["listSocial"] as $imgSocial)
+                    <li>
                         <a href="#" class="me-1 d-flex align-items-center">
                             <div class="img-container">
-                                <img :src="getImagePath(`/img/${social.img}`)" alt="">
+                                <img :src="{{$imgSocial["img"]}}" alt="" >
                             </div>
                         </a> 
                     </li>
+                    @endforeach
                 </ul>
+                @endforeach
             </div>
         </div>
     </section>

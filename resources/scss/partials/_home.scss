@@ -11,7 +11,6 @@ main {
             object-position: top;
         }
     }
-
     .container {
         position: relative;
         color:dark;
@@ -32,6 +31,26 @@ main {
             justify-content: center;
             flex-wrap: wrap;
             padding-top: 25px;
+            
+
+            .card{
+                width: calc(100% / 6);
+                padding: 10px;
+                padding-bottom: 30px ;
+                background-color:rgb(27, 27, 27);
+                border: 0;
+            }
+            .img-series{
+                width: 100%;
+            
+                img{
+                    width: 100%;
+                    height: 180px;
+                    object-fit: cover;
+                    object-position: top;
+                }
+            
+            }
         }
 
         >.load {
@@ -45,5 +64,29 @@ main {
 
             }
         }
+    
+    }
+
+    .section-top{
+        background-color: rgb(0, 128, 255);
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    
+        .container{
+            height: 130px;
+    
+            > .list-buy{
+                height: 100%;
+                    li > a{
+                    
+                    > img{
+                        max-width: 60px;
+                        height: 55px;
+                    }
+                }
+            }
+        }
+    
     }
 }
